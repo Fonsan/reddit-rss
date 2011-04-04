@@ -1,5 +1,6 @@
 RedditRss::Application.routes.draw do
   match ":category" => "rss#show"
+  root :to => (proc { |env| [200, {}, [File.read("#{Rails.root}/README")]] } )
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
